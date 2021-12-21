@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <div>
+              <a href="">
+                  <img src="https://selfregistration.cowin.gov.in/assets/images/login-screen.svg" class="img-fluid" alt="Responsive image">
+              </a>
+          </div>
+          <br>
+          <h1 class="card-title text-center">OTP Verification</h1>
+          <!-- <p>An OTP has been sent to XXX XXX {{lastFourotp}}</p> -->
+
+          <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="form-group mb-3">
+
+                <input
+                    formControlName="otp"
+                    id="otp"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter the OTP">
+                <div *ngIf="f.otp.touched && f.otp.invalid" class="alert alert-danger">
+                    <div *ngIf="f.otp.errors?.required">OTP is required.</div>
+                    <div *ngIf="f.otp.errors?.pattern">Please, Enter 6 digit OTP.</div>
+                </div>
+            </div>
+            <div class="container d-flex mt-4 mb-5 justify-content-center">
+            <button [routerLink]="['/home']" class="btn btn-primary" type="submit" [disabled]="!form.valid">Verify OTP & Proceed</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

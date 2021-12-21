@@ -1,0 +1,1 @@
+export const mobileNo : string = '9826643721';

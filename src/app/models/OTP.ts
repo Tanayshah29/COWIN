@@ -1,0 +1,1 @@
+export const OTP : string = '9826643721';

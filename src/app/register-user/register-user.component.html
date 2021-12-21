@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <div>
+              <a href="">
+                  <img src="https://selfregistration.cowin.gov.in/assets/images/login-screen.svg" class="img-fluid" alt="Responsive image">
+              </a>
+          </div>
+          <br>
+          <h1 class="card-title text-center">Register or Sign In for Vaccination</h1>
+          <p>An OTP will be sent to your mobile number for verification</p>
+
+          <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="form-group mb-3">
+
+                <input
+                    formControlName="mobileNumber"
+                    id="mobileNumber"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your mobile no">
+                <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">
+                    <div *ngIf="f.mobileNumber.errors?.required">Mobile Number is required.</div>
+                    <div *ngIf="f.mobileNumber.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>
+                </div>
+                <div class="container d-flex mt-3 justify-content-center">
+                  <button [routerLink]="['/verifyOTP']" class="btn btn-primary" type="submit" [disabled]="!form.valid">GET OTP</button>
+                </div>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

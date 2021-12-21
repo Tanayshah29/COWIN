@@ -1,0 +1,14 @@
+.yellowloginbtn{
+  background: #ffc002!important;
+  color: #002060!important;
+  padding: 9px 35px!important;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500!important;
+  line-height: 1.5!important;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px #999;
+  position:sticky;
+}
+
